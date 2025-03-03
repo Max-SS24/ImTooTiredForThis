@@ -1,11 +1,61 @@
+<!-- This is the main HTML file for the website. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Evolution of the Web</title>
+    <!-- This is the CSS code for styling the website. -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid black; padding: 8px; text-align: left; }
+    </style>
 </head>
 <body>
+    <!--this is the navigation bar-->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="topic1.html">Tim Berners-Lee & The Web</a>
+        <a href="topic2.html">Impact of HTML</a>
+        <a href="references.html">References</a>
+    </nav>
     
+    <div class="container">
+        <h1>The Evolution of the Web</h1>
+        <p>The World Wide Web, created by Sir Tim Berners-Lee, has revolutionized modern life. It has transformed the way people do business, communicate, and access information. This website explores its history, its impact, and the crucial role of HTML.</p>
+        
+        <!--this is the table of contents section-->
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="topic1.html">Tim Berners-Lee & The Web</a></li>
+            <li><a href="topic2.html">Impact of HTML</a></li>
+            <li><a href="references.html">References and Resources</a></li>
+        </ul>
+        <!--this is the key terms section-->
+        <h2>Key Terms</h2>
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>HyperText Markup Language, used to structure web pages.</td>
+            </tr>
+            <tr>
+                <td>HTTP</td>
+                <td>Hypertext Transfer Protocol, a system for transmitting web pages.</td>
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td>Uniform Resource Locator, the address of a web page.</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

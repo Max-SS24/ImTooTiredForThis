@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact of HTML</title>
     <style>
-        /* Common styles */
         body { font-family: Arial, sans-serif; margin: 20px; }
         nav { background: #333; padding: 10px; }
         nav a { color: white; margin: 10px; text-decoration: none; }
@@ -13,44 +12,41 @@
         .container { max-width: 800px; margin: auto; }
         img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
 
-        /* Mobile styles */
-        @media (max-width: 600px) {
-            .menu-links {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
-            .menu-links.active {
-                display: block;
-            }
-            .menu-icon {
-                display: block;
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 600px) {
+            nav {
+                font-size: 14px;
+                padding: 8px;
             }
             .container {
                 padding: 10px;
             }
         }
 
-        /* For larger screens */
-        @media (min-width: 1024px) {
-            .menu-links {
-                display: flex;
-                justify-content: center;
-                width: 100%;
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            .container {
+                padding: 15px;
             }
         }
+
+        @media screen and (min-width: 1025px) {
+            nav {
+                font-size: 16px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="menu-links">
-            <a href="index.html">Home</a>
-            <a href="topic1.html">Tim Berners-Lee & The Web</a>
-            <a href="topic2.html">Impact of HTML</a>
-            <a href="references.html">References</a> 
-            <a href="quiz.html">Quiz</a>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="topic1.html">Tim Berners-Lee & The Web</a>
+        <a href="topic2.html">Impact of HTML</a>
+        <a href="references.html">References</a> 
+        <a href="quiz.html">Quiz</a>
     </nav>
 
     <div class="container">
@@ -67,12 +63,5 @@
         <h2>HTML's Role in the Web's Growth</h2>
         <p>HTML has been crucial in breaking down barriers by enabling open communication across borders. It has driven the expansion of online businesses, social networking, and the sharing of knowledge worldwide. Thanks to HTML, the internet has become a powerful tool for innovation and social change.</p>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu-links');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>

@@ -11,12 +11,12 @@
         }
         nav {
             background: #333;
-            padding: 0;
+            padding: 10px 0;
             width: 100%;
             box-sizing: border-box;
         }
         .container {
-            max-width: 1000px; /* Match the width from the index file */
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
         }
@@ -30,10 +30,11 @@
         }
         .menu-links {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            width: 100%;
             max-width: 1000px;
             margin: 0 auto;
+            padding: 0;
         }
         .menu-icon {
             display: none;
@@ -43,6 +44,7 @@
         .menu-links.active {
             display: block;
         }
+
         /* Mobile styles */
         @media (max-width: 600px) {
             .menu-links {

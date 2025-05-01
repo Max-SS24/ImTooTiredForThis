@@ -3,64 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Page</title>
+    <title>Quiz</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         nav { background: #333; padding: 10px; }
         nav a { color: white; margin: 10px; text-decoration: none; }
         nav a:hover { text-decoration: underline; }
-        .container { max-width: 100%; margin: auto; }
+        .container { max-width: 800px; margin: auto; }
+        .menu-icon { display: block; cursor: pointer; }
+        .menu-links { display: none; flex-direction: column; align-items: center; }
+        nav a { margin: 10px 0; }
+        .btn { padding: 15px 30px; background-color: #333; color: white; border: none; cursor: pointer; margin-top: 20px; }
+        
+        /* Mobile-first styles (default) */
+        nav { display: flex; flex-direction: column; align-items: center; }
 
-        /* Responsive Design */
+        /* Media Query for 600px and under (Hamburger Menu) */
         @media (max-width: 600px) {
-            nav {
+            .menu-links.active {
                 display: flex;
-                flex-direction: column;
+            }
+            nav a { font-size: 16px; }
+            .menu-icon {
+                display: block;
+                background-color: #333;
+                color: white;
+                padding: 10px;
                 text-align: center;
+                font-size: 20px;
+                width: 50px;
+                border-radius: 5px;
             }
-            nav a {
-                margin: 5px 0;
-            }
-            .container {
-                padding: 10px;
-            }
-            button {
-                width: 100%;
-                padding: 10px;
+            .btn {
+                padding: 12px 25px; /* More padding on quiz button */
             }
         }
 
+        /* Media Query for 768px (Tablet and below) */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                width: 100%;
+                padding: 0 10px;
+            }
+        }
+
+        /* Media Query for 1024px (Desktop and above) */
+        @media (min-width: 1024px) {
+            .container {
+                width: 960px;
+            }
+            nav {
+                display: flex;
+                justify-content: space-between;
+            }
+            nav a {
+                margin: 0 20px;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="topic1.html">Tim Berners-Lee & The Web</a>
-        <a href="topic2.html">Impact of HTML</a>
-        <a href="references.html">References</a>
-        <a href="quiz.html">Quiz</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="topic1.html">Tim Berners-Lee & The Web</a>
+            <a href="topic2.html">Impact of HTML</a>
+            <a href="references.html">References</a> 
+            <a href="quiz.html">Quiz</a>
+        </div>
     </nav>
 
     <div class="container">
-        <h1>Web Development Quiz</h1>
-        <form action="#">
-            <div class="question">
-                <label>Who invented the World Wide Web?</label><br>
-                <input type="radio" name="q1" value="Tim Berners-Lee"> Tim Berners-Lee<br>
-                <input type="radio" name="q1" value="Mark Zuckerberg"> Mark Zuckerberg<br>
+        <h1>Quiz: Test Your Knowledge on Tim Berners-Lee & HTML</h1>
+        <form>
+            <div>
+                <label for="q1">1. Who invented the World Wide Web?</label><br>
+                <input type="radio" id="q1a" name="q1" value="Tim Berners-Lee"> Tim Berners-Lee<br>
+                <input type="radio" id="q1b" name="q1" value="Bill Gates"> Bill Gates<br>
+                <input type="radio" id="q1c" name="q1" value="Steve Jobs"> Steve Jobs<br>
             </div>
-            <div class="question">
-                <label>What does HTML stand for?</label><br>
-                <input type="radio" name="q2" value="HyperText Markup Language"> HyperText Markup Language<br>
-                <input type="radio" name="q2" value="HyperText Machine Language"> HyperText Machine Language<br>
+            <div>
+                <label for="q2">2. What does HTML stand for?</label><br>
+                <input type="radio" id="q2a" name="q2" value="Hypertext Markup Language"> Hypertext Markup Language<br>
+                <input type="radio" id="q2b" name="q2" value="Hyperlink and Text Markup Language"> Hyperlink and Text Markup Language<br>
+                <input type="radio" id="q2c" name="q2" value="Home Text Markup Language"> Home Text Markup Language<br>
             </div>
-            <button type="submit">Submit</button>
+            <div>
+                <label for="q3">3. In what year was the World Wide Web made publicly available?</label><br>
+                <input type="radio" id="q3a" name="q3" value="1993"> 1993<br>
+                <input type="radio" id="q3b" name="q3" value="1989"> 1989<br>
+                <input type="radio" id="q3c" name="q3" value="2001"> 2001<br>
+            </div>
+            <div>
+                <label for="q4">4. What does HTTP stand for?</label><br>
+                <input type="radio" id="q4a" name="q4" value="HyperText Transfer Protocol"> HyperText Transfer Protocol<br>
+                <input type="radio" id="q4b" name="q4" value="HyperText Transport Protocol"> HyperText Transport Protocol<br>
+                <input type="radio" id="q4c" name="q4" value="HyperType Transfer Protocol"> HyperType Transfer Protocol<br>
+            </div>
+            <div>
+                <label for="q5">5. Which organization developed the World Wide Web?</label><br>
+                <input type="radio" id="q5a" name="q5" value="CERN"> CERN<br>
+                <input type="radio" id="q5b" name="q5" value="NASA"> NASA<br>
+                <input type="radio" id="q5c" name="q5" value="Google"> Google<br>
+            </div>
+            <button type="submit" class="btn">Submit</button>
         </form>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

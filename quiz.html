@@ -1,114 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web Quiz</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    nav { background: #333; padding: 10px; }
-    nav a { color: white; margin: 10px; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: auto; }
-    .question { margin-bottom: 20px; }
-    .result { margin-top: 20px; font-weight: bold; }
-    .btn { padding: 10px 20px; margin-top: 10px; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Web Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: auto; }
+        .question { margin-bottom: 20px; }
+        .result { margin-top: 20px; font-weight: bold; }
+        .btn { padding: 10px 20px; margin-top: 10px; }
+    </style>
 </head>
 
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="topic1.html">Tim Berners-Lee & The Web</a>
-    <a href="topic2.html">Impact of HTML</a>
-    <a href="references.html">References</a>
-    <a href="quiz.html">Quiz</a>
-  </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="topic1.html">Tim Berners-Lee & The Web</a>
+        <a href="topic2.html">Impact of HTML</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
 
-  <div class="container">
-    <h1>Self-Assessment Quiz</h1>
-    <form id="quizForm">
-      <!-- Question 1 -->
-      <div class="question">
-        <p>1. Who invented the World Wide Web?</p>
-        <input type="radio" name="q1" value="a" /> Steve Jobs<br/>
-        <input type="radio" name="q1" value="b" /> Bill Gates<br/>
-        <input type="radio" name="q1" value="c" /> Tim Berners-Lee<br/>
-      </div>
+    <div class="container">
+        <h1>Self-Assessment Quiz</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Who invented the World Wide Web?</p>
+                <input type="radio" name="q1" value="a" /> Steve Jobs<br/>
+                <input type="radio" name="q1" value="b" /> Bill Gates<br/>
+                <input type="radio" name="q1" value="c" /> Tim Berners-Lee<br/>
+            </div>
 
-      <!-- Question 2 -->
-      <div class="question">
-        <p>2. What does HTML stand for?</p>
-        <input type="radio" name="q2" value="a" /> HighText Machine Language<br/>
-        <input type="radio" name="q2" value="b" /> HyperText Markup Language<br/>
-        <input type="radio" name="q2" value="c" /> HyperTool Markup Link<br/>
-      </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. What does HTML stand for?</p>
+                <input type="radio" name="q2" value="a" /> HighText Machine Language<br/>
+                <input type="radio" name="q2" value="b" /> HyperText Markup Language<br/>
+                <input type="radio" name="q2" value="c" /> HyperTool Markup Link<br/>
+            </div>
 
-      <!-- Question 3 -->
-      <div class="question">
-        <p>3. When was the World Wide Web made public?</p>
-        <input type="radio" name="q3" value="a" /> 1991<br/>
-        <input type="radio" name="q3" value="b" /> 1993<br/>
-        <input type="radio" name="q3" value="c" /> 1995<br/>
-      </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. When was the World Wide Web made public?</p>
+                <input type="radio" name="q3" value="a" /> 1991<br/>
+                <input type="radio" name="q3" value="b" /> 1993<br/>
+                <input type="radio" name="q3" value="c" /> 1995<br/>
+            </div>
 
-      <!-- Fill in the blank -->
-      <div class="question">
-        <p>4. Fill in the blank: The protocol used for data transfer on the web is ______.</p>
-        <input type="text" name="q4" />
-      </div>
+            <!-- Fill in the blank -->
+            <div class="question">
+                <p>4. Fill in the blank: The protocol used for data transfer on the web is ______.</p>
+                <input type="text" name="q4" />
+            </div>
 
-      <!-- Multi-select question -->
-      <div class="question">
-        <p>5. Select all components invented by Tim Berners-Lee:</p>
-        <input type="checkbox" name="q5" value="html" /> HTML<br/>
-        <input type="checkbox" name="q5" value="http" /> HTTP<br/>
-        <input type="checkbox" name="q5" value="css" /> CSS<br/>
-        <input type="checkbox" name="q5" value="uri" /> URI (URL)<br/>
-      </div>
+            <!-- Multi-select question -->
+            <div class="question">
+                <p>5. Select all components invented by Tim Berners-Lee:</p>
+                <input type="checkbox" name="q5" value="html" /> HTML<br/>
+                <input type="checkbox" name="q5" value="http" /> HTTP<br/>
+                <input type="checkbox" name="q5" value="css" /> CSS<br/>
+                <input type="checkbox" name="q5" value="uri" /> URI (URL)<br/>
+            </div>
 
-      <button type="button" class="btn" onclick="gradeQuiz()">Submit</button>
-      <button type="reset" class="btn">Restart</button>
-    </form>
+            <button type="button" class="btn" onclick="gradeQuiz()">Submit</button>
+            <button type="reset" class="btn">Restart</button>
+        </form>
 
-    <div id="result" class="result"></div>
-  </div>
+        <div id="result" class="result"></div>
+    </div>
 
-  <script>
-    function gradeQuiz() {
-      let score = 0;
-      const total = 5;
-      const result = document.getElementById('result');
-      const answers = {
-        q1: 'c',
-        q2: 'b',
-        q3: 'b',
-        q4: 'http',
-        q5: ['html', 'http', 'uri']
-      };
+    <script>
+        function gradeQuiz() {
+            let score = 0;
+            const total = 5;
+            const result = document.getElementById('result');
+            const answers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'b',
+                q4: 'http',
+                q5: ['html', 'http', 'uri']
+            };
 
-      const form = document.forms['quizForm'];
+            const form = document.forms['quizForm'];
 
-      // Q1 - Q3
-      if (form.q1.value === answers.q1) score++;
-      if (form.q2.value === answers.q2) score++;
-      if (form.q3.value === answers.q3) score++;
+            // Q1 - Q3
+            if (form.q1.value === answers.q1) score++;
+            if (form.q2.value === answers.q2) score++;
+            if (form.q3.value === answers.q3) score++;
 
-      // Q4 - case insensitive match
-      const userAnswer4 = form.q4.value.trim().toLowerCase();
-      if (userAnswer4 === answers.q4) score++;
+            // Q4
+            if (form.q4.value.toLowerCase() === answers.q4) score++;
 
-      // Q5 - check all correct and no incorrect
-      const q5Boxes = form.querySelectorAll('input[name="q5"]:checked');
-      const selected = Array.from(q5Boxes).map(cb => cb.value);
-      const correct = answers.q5;
-      const allCorrect = correct.every(val => selected.includes(val)) && selected.every(val => correct.includes(val));
-      if (allCorrect) score++;
+            // Q5
+            const selectedQ5 = [];
+            if (form.q5.html.checked) selectedQ5.push('html');
+            if (form.q5.http.checked) selectedQ5.push('http');
+            if (form.q5.uri.checked) selectedQ5.push('uri');
 
-      // Result
-      result.innerHTML = `Your score is ${score}/${total}.<br>`;
-      result.innerHTML += score >= 4 ? '✅ Pass' : '❌ Fail';
-    }
-  </script>
+            if (JSON.stringify(selectedQ5) === JSON.stringify(answers.q5)) score++;
+
+            // Show result
+            result.textContent = `Your score: ${score} / ${total}`;
+        }
+    </script>
 </body>
 </html>

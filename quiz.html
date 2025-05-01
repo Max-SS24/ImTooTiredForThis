@@ -5,51 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <style>
-        /* Common CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        nav {
-            background: #333;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .menu-links {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .menu-links.active {
-            display: block;
-        }
-        .btn {
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #555;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: auto; }
 
         /* Mobile styles */
         @media (max-width: 600px) {
@@ -66,10 +26,6 @@
             }
             .container {
                 padding: 10px;
-            }
-            .btn {
-                width: 100%;
-                padding: 15px;
             }
         }
 
@@ -96,56 +52,79 @@
     </nav>
 
     <div class="container">
-        <h1>Quiz: Test Your Knowledge on Tim Berners-Lee & HTML</h1>
-        <form>
-            <!-- Question 1 -->
-            <div>
-                <label for="q1">1. Who invented the World Wide Web?</label><br>
-                <input type="radio" id="q1a" name="q1" value="Tim Berners-Lee"> Tim Berners-Lee<br>
-                <input type="radio" id="q1b" name="q1" value="Bill Gates"> Bill Gates<br>
-                <input type="radio" id="q1c" name="q1" value="Steve Jobs"> Steve Jobs<br>
-            </div>
-            
-            <!-- Question 2 -->
-            <div>
-                <label for="q2">2. What does HTML stand for?</label><br>
-                <input type="radio" id="q2a" name="q2" value="HyperText Markup Language"> HyperText Markup Language<br>
-                <input type="radio" id="q2b" name="q2" value="Hyper Tool Markup Language"> Hyper Tool Markup Language<br>
-                <input type="radio" id="q2c" name="q2" value="Home Text Markup Language"> Home Text Markup Language<br>
-            </div>
+        <h1>Quiz: Test Your Knowledge</h1>
+        <form id="quizForm" onsubmit="return checkQuiz()">
+            <h2>1. Who invented the World Wide Web?</h2>
+            <label><input type="radio" name="q1" value="a"> Bill Gates</label><br>
+            <label><input type="radio" name="q1" value="b"> Tim Berners-Lee</label><br>
+            <label><input type="radio" name="q1" value="c"> Steve Jobs</label><br>
 
-            <!-- Question 3 -->
-            <div>
-                <label for="q3">3. What does HTTP stand for?</label><br>
-                <input type="radio" id="q3a" name="q3" value="Hypertext Transfer Protocol"> Hypertext Transfer Protocol<br>
-                <input type="radio" id="q3b" name="q3" value="Hyper Tool Transfer Protocol"> Hyper Tool Transfer Protocol<br>
-                <input type="radio" id="q3c" name="q3" value="Home Tool Transfer Protocol"> Home Tool Transfer Protocol<br>
-            </div>
+            <h2>2. What does HTML stand for?</h2>
+            <label><input type="radio" name="q2" value="a"> HyperText Markup Language</label><br>
+            <label><input type="radio" name="q2" value="b"> HighText Machine Language</label><br>
+            <label><input type="radio" name="q2" value="c"> Hyper Transfer Markup Language</label><br>
 
-            <!-- Question 4 -->
-            <div>
-                <label for="q4">4. Which of these is a fundamental part of web addresses?</label><br>
-                <input type="radio" id="q4a" name="q4" value="URL"> URL<br>
-                <input type="radio" id="q4b" name="q4" value="HTTP"> HTTP<br>
-                <input type="radio" id="q4c" name="q4" value="DNS"> DNS<br>
-            </div>
+            <h2>3. What does URI stand for?</h2>
+            <label><input type="radio" name="q3" value="a"> Uniform Resource Identifier</label><br>
+            <label><input type="radio" name="q3" value="b"> Universal Resource Identifier</label><br>
+            <label><input type="radio" name="q3" value="c"> Uniform Resource Interface</label><br>
 
-            <!-- Question 5 -->
-            <div>
-                <label for="q5">5. What was the first popular web browser?</label><br>
-                <input type="radio" id="q5a" name="q5" value="Mosaic"> Mosaic<br>
-                <input type="radio" id="q5b" name="q5" value="Internet Explorer"> Internet Explorer<br>
-                <input type="radio" id="q5c" name="q5" value="Netscape Navigator"> Netscape Navigator<br>
-            </div>
+            <h2>4. In what year did the World Wide Web become publicly available?</h2>
+            <label><input type="radio" name="q4" value="a"> 1990</label><br>
+            <label><input type="radio" name="q4" value="b"> 1993</label><br>
+            <label><input type="radio" name="q4" value="c"> 1995</label><br>
 
-            <button type="submit" class="btn">Submit</button>
+            <h2>5. What does HTTP stand for?</h2>
+            <label><input type="radio" name="q5" value="a"> HyperText Transfer Protocol</label><br>
+            <label><input type="radio" name="q5" value="b"> HyperText Translation Protocol</label><br>
+            <label><input type="radio" name="q5" value="c"> HyperText Technology Protocol</label><br>
+
+            <br><br>
+            <button type="submit">Submit Quiz</button>
         </form>
+        
+        <div id="result" style="display:none;">
+            <h2 id="resultMessage"></h2>
+            <button onclick="window.location.reload();">Retake Quiz</button>
+        </div>
     </div>
 
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu-links');
             menu.classList.toggle('active');
+        }
+
+        function checkQuiz() {
+            const answers = {
+                q1: "b", // Tim Berners-Lee
+                q2: "a", // HyperText Markup Language
+                q3: "a", // Uniform Resource Identifier
+                q4: "b", // 1993
+                q5: "a"  // HyperText Transfer Protocol
+            };
+
+            let score = 0;
+            const form = document.forms["quizForm"];
+
+            // Check answers
+            for (let question in answers) {
+                const selectedAnswer = form[question].value;
+                if (selectedAnswer === answers[question]) {
+                    score++;
+                }
+            }
+
+            // Display result
+            const resultDiv = document.getElementById('result');
+            const resultMessage = document.getElementById('resultMessage');
+            if (score >= 4) {
+                resultMessage.innerText = `Congratulations! You passed the quiz with a score of ${score} out of 5.`;
+            } else {
+                resultMessage.innerText = `You failed the quiz. You scored ${score} out of 5. Try again!`;
+            }
+            resultDiv.style.display = "block";
+            return false; // Prevent form submission
         }
     </script>
 </body>

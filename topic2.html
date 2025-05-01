@@ -5,83 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact of HTML</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        nav {
-            background: #333;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
+        body { body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
         nav a {
             color: white;
             margin: 10px;
             text-decoration: none;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
+        nav a:hover { text-decoration: underline; }
+
+        /* Center the menu links */
         .menu-links {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
         }
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .menu-links.active {
-            display: block;
-        }
-        .hero {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .hero img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-        }
 
-        /* Mobile styles */
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
+
+        /* For smaller screens */
         @media (max-width: 600px) {
-            .menu-links {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
-            .menu-links.active {
-                display: block;
-            }
-            .menu-icon {
-                display: block;
-            }
-            .container {
-                padding: 10px;
-            }
-        }
-
-        /* For larger screens */
-        @media (min-width: 1024px) {
-            .menu-links {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-        }
-
-        /* Ensure container has the same width as index */
-        .container {
-            max-width: 1000px; /* Match the width from the index file */
-            margin: auto;
-            padding: 20px;
+            body { font-size: 14px; }
+            .container { padding: 10px; }
         }
     </style>
-</head>
+</head>     
 <body>
     <nav>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>

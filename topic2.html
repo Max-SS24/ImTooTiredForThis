@@ -11,7 +11,9 @@
         }
         nav {
             background: #333;
-            padding: 10px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
         }
         nav a {
             color: white;
@@ -34,17 +36,15 @@
         .menu-links.active {
             display: block;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+        .hero {
+            text-align: center;
+            margin-top: 50px;
         }
-        img {
+        .hero img {
             width: 100%;
             max-width: 500px;
             height: auto;
             border-radius: 8px;
-            margin-top: 20px;
         }
 
         /* Mobile styles */
@@ -73,6 +73,13 @@
                 width: 100%;
             }
         }
+
+        /* Ensure container has the same width as index */
+        .container {
+            max-width: 1000px; /* Match the width from the index file */
+            margin: auto;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -90,12 +97,14 @@
     <div class="container">
         <h1>Impact of HTML</h1>
         <p>HTML, or HyperText Markup Language, is the backbone of web development. Created by Tim Berners-Lee, it provides the foundation for structuring content on the internet.</p>
+
         <h2>Key Features of HTML</h2>
         <ul>
             <li><strong>Formatting:</strong> HTML allows text structuring using headings, paragraphs, lists, and tables.</li>
             <li><strong>Multimedia Integration:</strong> It enables the embedding of images, videos, and audio files.</li>
             <li><strong>Forms & Interactivity:</strong> HTML supports forms for user input, enhancing web applications.</li>
         </ul>
+
         <h2>HTML's Role in the Web's Growth</h2>
         <p>HTML has been crucial in breaking down barriers by enabling open communication across borders. It has driven the expansion of online businesses, social networking, and the sharing of knowledge worldwide. Thanks to HTML, the internet has become a powerful tool for innovation and social change.</p>
     </div>

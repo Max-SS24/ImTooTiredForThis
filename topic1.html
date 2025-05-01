@@ -9,8 +9,29 @@
         nav { background: #333; padding: 10px; }
         nav a { color: white; margin: 10px; text-decoration: none; }
         nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: auto; }
+        .container { max-width: 100%; margin: auto; }
         img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -18,7 +39,7 @@
         <a href="index.html">Home</a>
         <a href="topic1.html">Tim Berners-Lee & The Web</a>
         <a href="topic2.html">Impact of HTML</a>
-        <a href="references.html">References</a> 
+        <a href="references.html">References</a>
         <a href="quiz.html">Quiz</a>
     </nav>
 
@@ -27,7 +48,7 @@
         <p>Sir Tim Berners-Lee, a computer scientist from London, invented the World Wide Web. His passion for electronics began in childhood, where he built gadgets to control model trains. This interest led him to study at Oxford University, and later, he became a Software Engineer at CERN.</p>
 
         <!-- Add Image of Tim Berners-Lee -->
-        <img src="https://raw.githubusercontent.com/Max-SS24/ImTooTiredForThis/main/pngegg.png" alt="Tim Berners-Lee">
+        <img src="https://github.com/Max-SS24/ImTooTiredForThis/blob/main/pngegg.png" alt="Tim Berners-Lee">
 
         <p>At CERN in the 1980s, Berners-Lee observed difficulties in sharing information among researchers. He proposed a solution using hypertext technology. Though his initial proposal was rejected, he persisted, leading to the development of key web technologies:</p>
 

@@ -5,7 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        /* Common CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-links.active {
+            display: block;
+        }
+        .hero {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            .menu-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+            }
+            .menu-links.active {
+                display: block;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* For larger screens */
+        @media (min-width: 1024px) {
+            .menu-links {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -21,8 +90,11 @@
     </nav>
 
     <div class="container">
-        <h1>Welcome to the World Wide Web Research</h1>
-        <p>Explore the history and impact of HTML and the World Wide Web.</p>
+        <h1>Welcome to Our Web Development Project</h1>
+        <p>Learn about the evolution of the World Wide Web and HTML, and test your knowledge through our quiz!</p>
+        <div class="hero">
+            <img src="https://example.com/hero-image.jpg" alt="World Wide Web Image">
+        </div>
     </div>
 
     <script>

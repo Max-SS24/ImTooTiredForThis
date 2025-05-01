@@ -5,11 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; }
-        nav a { color: white; margin: 10px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: auto; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        nav {
+            background: #333;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-links.active {
+            display: block;
+        }
+        .container {
+            max-width: 1000px; /* Match the width from the index file */
+            margin: auto;
+            padding: 20px;
+        }
 
         /* Mobile styles */
         @media (max-width: 600px) {
@@ -49,8 +80,7 @@
             <a href="references.html">References</a> 
             <a href="quiz.html">Quiz</a>
         </div>
-    </nav>
-
+    </nav>  
     <div class="container">
         <h1>Quiz: Test Your Knowledge</h1>
         <form id="quizForm" onsubmit="return checkQuiz()">

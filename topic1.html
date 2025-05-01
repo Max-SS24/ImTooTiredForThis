@@ -7,8 +7,20 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         nav { background: #333; padding: 10px; }
-        nav a { color: white; margin: 10px; text-decoration: none; }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
         nav a:hover { text-decoration: underline; }
+
+        /* Center the menu links */
+        .menu-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .container { max-width: 1000px; margin: auto; padding: 20px; }
         img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
 
@@ -21,11 +33,13 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="topic1.html">Tim Berners-Lee & The Web</a>
-        <a href="topic2.html">Impact of HTML</a>
-        <a href="references.html">References</a> 
-        <a href="quiz.html">Quiz</a>
+        <div class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="topic1.html">Tim Berners-Lee & The Web</a>
+            <a href="topic2.html">Impact of HTML</a>
+            <a href="references.html">References</a> 
+            <a href="quiz.html">Quiz</a>
+        </div>
     </nav>
 
     <div class="container">

@@ -5,73 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim Berners-Lee & The Web</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
         nav {
             background: #333;
             padding: 10px;
-            text-align: center; /* Center the menu */
         }
-        nav a { 
-            color: white; 
-            margin: 10px; 
-            text-decoration: none; 
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
         }
-        nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: auto; }
-        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-links.active {
+            display: block;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
 
-        /* Media Queries for Responsive Design */
-        @media screen and (max-width: 600px) {
-            nav {
-                font-size: 14px;
-                padding: 8px;
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            .menu-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+            }
+            .menu-links.active {
+                display: block;
+            }
+            .menu-icon {
+                display: block;
             }
             .container {
                 padding: 10px;
             }
         }
 
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            .container {
-                padding: 15px;
-            }
-        }
-
-        @media screen and (min-width: 1025px) {
-            nav {
-                font-size: 16px;
-            }
-            .container {
-                padding: 20px;
+        /* For larger screens */
+        @media (min-width: 1024px) {
+            .menu-links {
+                display: flex;
+                justify-content: center;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="topic1.html">Tim Berners-Lee & The Web</a>
-        <a href="topic2.html">Impact of HTML</a>
-        <a href="references.html">References</a>
-        <a href="quiz.html">Quiz</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-links">
+            <a href="index.html">Home</a>
+            <a href="topic1.html">Tim Berners-Lee & The Web</a>
+            <a href="topic2.html">Impact of HTML</a>
+            <a href="references.html">References</a> 
+            <a href="quiz.html">Quiz</a>
+        </div>
     </nav>
 
     <div class="container">
         <h1>Tim Berners-Lee & The Web</h1>
         <p>Sir Tim Berners-Lee, a computer scientist from London, invented the World Wide Web. His passion for electronics began in childhood, where he built gadgets to control model trains. This interest led him to study at Oxford University, and later, he became a Software Engineer at CERN.</p>
-
-        <!-- Add Image of Tim Berners-Lee -->
         <img src="https://github.com/Max-SS24/ImTooTiredForThis/blob/main/pngegg.png" alt="Tim Berners-Lee">
-
         <p>At CERN in the 1980s, Berners-Lee observed difficulties in sharing information among researchers. He proposed a solution using hypertext technology. Though his initial proposal was rejected, he persisted, leading to the development of key web technologies:</p>
-
         <ul>
             <li><strong>HTML (HyperText Markup Language):</strong> Used to format documents and structure web content.</li>
             <li><strong>URI (Uniform Resource Identifier):</strong> Now known as a URL, it uniquely identifies web pages.</li>
             <li><strong>HTTP (Hypertext Transfer Protocol):</strong> The protocol for transmitting information on the web.</li>
         </ul>
-
         <p>His work laid the foundation for the World Wide Web, which became publicly available in 1993. The web has since revolutionized the way people communicate, access information, and interact globally.</p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

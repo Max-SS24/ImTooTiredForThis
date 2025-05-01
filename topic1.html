@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim Berners-Lee & The Web</title>
     <style>
+        /* Common styles here */
         body { font-family: Arial, sans-serif; margin: 20px; }
         nav { background: #333; padding: 10px; }
         nav a { color: white; margin: 10px; text-decoration: none; }
@@ -12,56 +13,30 @@
         .container { max-width: 800px; margin: auto; }
         img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
 
-        /* Mobile-first styles (default) */
-        nav { display: flex; flex-direction: column; align-items: center; }
-        .menu-icon { display: block; cursor: pointer; }
-        .menu-links { display: none; flex-direction: column; align-items: center; }
-        nav a { margin: 10px 0; }
-
-        /* Media Query for 600px and under (Hamburger Menu) */
+        /* Mobile styles */
         @media (max-width: 600px) {
-            .menu-links.active {
-                display: flex;
+            .menu-links {
+                display: none;
+                width: 100%;
+                text-align: center;
             }
-            nav a { font-size: 16px; }
+            .menu-links.active {
+                display: block;
+            }
             .menu-icon {
                 display: block;
-                background-color: #333;
-                color: white;
+            }
+            .container {
                 padding: 10px;
-                text-align: center;
-                font-size: 20px;
-                width: 50px;
-                border-radius: 5px;
             }
         }
 
-        /* Media Query for 768px (Tablet and below) */
-        @media (max-width: 768px) {
-            .container {
-                width: 100%;
-                padding: 0 10px;
-            }
-        }
-
-        /* Media Query for 1024px (Desktop and above) */
+        /* For larger screens */
         @media (min-width: 1024px) {
-            .container {
-                width: 960px;
-            }
-            nav {
+            .menu-links {
                 display: flex;
-                justify-content: space-between;
-            }
-            nav a {
-                margin: 0 20px;
-            }
-        }
-
-        /* Quiz button adjustments */
-        @media (max-width: 600px) {
-            .btn {
-                padding: 12px 30px; /* More padding for smaller buttons */
+                justify-content: center;
+                width: 100%;
             }
         }
     </style>
@@ -81,13 +56,17 @@
     <div class="container">
         <h1>Tim Berners-Lee & The Web</h1>
         <p>Sir Tim Berners-Lee, a computer scientist from London, invented the World Wide Web. His passion for electronics began in childhood, where he built gadgets to control model trains. This interest led him to study at Oxford University, and later, he became a Software Engineer at CERN.</p>
-        <img src="https://github.com/Max-SS24/ImTooTiredForThis/blob/main/pngegg.png?raw=true" alt="Tim Berners-Lee">
+
+        <img src="https://github.com/Max-SS24/ImTooTiredForThis/blob/main/pngegg.png" alt="Tim Berners-Lee">
+
         <p>At CERN in the 1980s, Berners-Lee observed difficulties in sharing information among researchers. He proposed a solution using hypertext technology. Though his initial proposal was rejected, he persisted, leading to the development of key web technologies:</p>
+
         <ul>
             <li><strong>HTML (HyperText Markup Language):</strong> Used to format documents and structure web content.</li>
             <li><strong>URI (Uniform Resource Identifier):</strong> Now known as a URL, it uniquely identifies web pages.</li>
             <li><strong>HTTP (Hypertext Transfer Protocol):</strong> The protocol for transmitting information on the web.</li>
         </ul>
+
         <p>His work laid the foundation for the World Wide Web, which became publicly available in 1993. The web has since revolutionized the way people communicate, access information, and interact globally.</p>
     </div>
 

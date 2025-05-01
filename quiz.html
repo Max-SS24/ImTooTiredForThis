@@ -5,59 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; }
-        nav a { color: white; margin: 10px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: auto; }
-        .menu-icon { display: block; cursor: pointer; }
-        .menu-links { display: none; flex-direction: column; align-items: center; }
-        nav a { margin: 10px 0; }
-        .btn { padding: 15px 30px; background-color: #333; color: white; border: none; cursor: pointer; margin-top: 20px; }
-        
-        /* Mobile-first styles (default) */
-        nav { display: flex; flex-direction: column; align-items: center; }
+        /* Common CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-links.active {
+            display: block;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
 
-        /* Media Query for 600px and under (Hamburger Menu) */
+        /* Mobile styles */
         @media (max-width: 600px) {
-            .menu-links.active {
-                display: flex;
+            .menu-links {
+                display: none;
+                width: 100%;
+                text-align: center;
             }
-            nav a { font-size: 16px; }
+            .menu-links.active {
+                display: block;
+            }
             .menu-icon {
                 display: block;
-                background-color: #333;
-                color: white;
+            }
+            .container {
                 padding: 10px;
-                text-align: center;
-                font-size: 20px;
-                width: 50px;
-                border-radius: 5px;
             }
             .btn {
-                padding: 12px 25px; /* More padding on quiz button */
-            }
-        }
-
-        /* Media Query for 768px (Tablet and below) */
-        @media (max-width: 768px) {
-            .container {
                 width: 100%;
-                padding: 0 10px;
+                padding: 15px;
             }
         }
 
-        /* Media Query for 1024px (Desktop and above) */
+        /* For larger screens */
         @media (min-width: 1024px) {
-            .container {
-                width: 960px;
-            }
-            nav {
+            .menu-links {
                 display: flex;
-                justify-content: space-between;
-            }
-            nav a {
-                margin: 0 20px;
+                justify-content: center;
+                width: 100%;
             }
         }
     </style>
@@ -77,36 +98,46 @@
     <div class="container">
         <h1>Quiz: Test Your Knowledge on Tim Berners-Lee & HTML</h1>
         <form>
+            <!-- Question 1 -->
             <div>
                 <label for="q1">1. Who invented the World Wide Web?</label><br>
                 <input type="radio" id="q1a" name="q1" value="Tim Berners-Lee"> Tim Berners-Lee<br>
                 <input type="radio" id="q1b" name="q1" value="Bill Gates"> Bill Gates<br>
                 <input type="radio" id="q1c" name="q1" value="Steve Jobs"> Steve Jobs<br>
             </div>
+            
+            <!-- Question 2 -->
             <div>
                 <label for="q2">2. What does HTML stand for?</label><br>
-                <input type="radio" id="q2a" name="q2" value="Hypertext Markup Language"> Hypertext Markup Language<br>
-                <input type="radio" id="q2b" name="q2" value="Hyperlink and Text Markup Language"> Hyperlink and Text Markup Language<br>
+                <input type="radio" id="q2a" name="q2" value="HyperText Markup Language"> HyperText Markup Language<br>
+                <input type="radio" id="q2b" name="q2" value="Hyper Tool Markup Language"> Hyper Tool Markup Language<br>
                 <input type="radio" id="q2c" name="q2" value="Home Text Markup Language"> Home Text Markup Language<br>
             </div>
+
+            <!-- Question 3 -->
             <div>
-                <label for="q3">3. In what year was the World Wide Web made publicly available?</label><br>
-                <input type="radio" id="q3a" name="q3" value="1993"> 1993<br>
-                <input type="radio" id="q3b" name="q3" value="1989"> 1989<br>
-                <input type="radio" id="q3c" name="q3" value="2001"> 2001<br>
+                <label for="q3">3. What does HTTP stand for?</label><br>
+                <input type="radio" id="q3a" name="q3" value="Hypertext Transfer Protocol"> Hypertext Transfer Protocol<br>
+                <input type="radio" id="q3b" name="q3" value="Hyper Tool Transfer Protocol"> Hyper Tool Transfer Protocol<br>
+                <input type="radio" id="q3c" name="q3" value="Home Tool Transfer Protocol"> Home Tool Transfer Protocol<br>
             </div>
+
+            <!-- Question 4 -->
             <div>
-                <label for="q4">4. What does HTTP stand for?</label><br>
-                <input type="radio" id="q4a" name="q4" value="HyperText Transfer Protocol"> HyperText Transfer Protocol<br>
-                <input type="radio" id="q4b" name="q4" value="HyperText Transport Protocol"> HyperText Transport Protocol<br>
-                <input type="radio" id="q4c" name="q4" value="HyperType Transfer Protocol"> HyperType Transfer Protocol<br>
+                <label for="q4">4. Which of these is a fundamental part of web addresses?</label><br>
+                <input type="radio" id="q4a" name="q4" value="URL"> URL<br>
+                <input type="radio" id="q4b" name="q4" value="HTTP"> HTTP<br>
+                <input type="radio" id="q4c" name="q4" value="DNS"> DNS<br>
             </div>
+
+            <!-- Question 5 -->
             <div>
-                <label for="q5">5. Which organization developed the World Wide Web?</label><br>
-                <input type="radio" id="q5a" name="q5" value="CERN"> CERN<br>
-                <input type="radio" id="q5b" name="q5" value="NASA"> NASA<br>
-                <input type="radio" id="q5c" name="q5" value="Google"> Google<br>
+                <label for="q5">5. What was the first popular web browser?</label><br>
+                <input type="radio" id="q5a" name="q5" value="Mosaic"> Mosaic<br>
+                <input type="radio" id="q5b" name="q5" value="Internet Explorer"> Internet Explorer<br>
+                <input type="radio" id="q5c" name="q5" value="Netscape Navigator"> Netscape Navigator<br>
             </div>
+
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>

@@ -5,100 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tim Berners-Lee & The Web</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        nav {
-            background: #333;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-        }
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .menu-links {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .menu-links.active {
-            display: block;
-        }
-        .hero {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .hero img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px; }
 
-        /* Mobile styles */
+        /* For smaller screens */
         @media (max-width: 600px) {
-            .menu-links {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
-            .menu-links.active {
-                display: block;
-            }
-            .menu-icon {
-                display: block;
-            }
-            .container {
-                padding: 10px;
-            }
-        }
-
-        /* For larger screens */
-        @media (min-width: 1024px) {
-            .menu-links {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-        }
-
-        /* Ensure container has the same width as index */
-        .container {
-            max-width: 1000px; /* Match the width from the index file */
-            margin: auto;
-            padding: 20px;
+            body { font-size: 14px; }
+            .container { padding: 10px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="menu-links">
-            <a href="index.html">Home</a>
-            <a href="topic1.html">Tim Berners-Lee & The Web</a>
-            <a href="topic2.html">Impact of HTML</a>
-            <a href="references.html">References</a> 
-            <a href="quiz.html">Quiz</a>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="topic1.html">Tim Berners-Lee & The Web</a>
+        <a href="topic2.html">Impact of HTML</a>
+        <a href="references.html">References</a> 
+        <a href="quiz.html">Quiz</a>
     </nav>
 
     <div class="container">
         <h1>Tim Berners-Lee & The Web</h1>
         <p>Sir Tim Berners-Lee, a computer scientist from London, invented the World Wide Web. His passion for electronics began in childhood, where he built gadgets to control model trains. This interest led him to study at Oxford University, and later, he became a Software Engineer at CERN.</p>
 
-        <img src="https://github.com/Max-SS24/ImTooTiredForThis/blob/main/pngegg.png" alt="Tim Berners-Lee">
+        <!-- Add Image of Tim Berners-Lee -->
+        <img src="https://raw.githubusercontent.com/Max-SS24/ImTooTiredForThis/main/pngegg.png" alt="Tim Berners-Lee">
 
         <p>At CERN in the 1980s, Berners-Lee observed difficulties in sharing information among researchers. He proposed a solution using hypertext technology. Though his initial proposal was rejected, he persisted, leading to the development of key web technologies:</p>
 
@@ -109,13 +44,23 @@
         </ul>
 
         <p>His work laid the foundation for the World Wide Web, which became publicly available in 1993. The web has since revolutionized the way people communicate, access information, and interact globally.</p>
-    </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu-links');
-            menu.classList.toggle('active');
-        }
-    </script>
+        <h2>Tim's Vision for the Web</h2>
+        <p>Tim Berners-Lee’s vision for the Web was that it should be a universal medium where everyone can create and share information freely. The Web should remain open and accessible, and it should empower people to contribute to the development of knowledge, culture, and society.</p>
+
+        <p>Tim Berners-Lee is also known for his work in advocating for net neutrality and an open, free internet. His belief in the importance of universal access and freedom of information has shaped the modern web we use today.</p>
+
+        <h2>Key Contributions</h2>
+        <ul>
+            <li><strong>World Wide Web Foundation:</strong> Founded in 2009 to advance digital rights and equality.</li>
+            <li><strong>Linked Data:</strong> A method for structuring data that is meant to be shared and connected on the web.</li>
+            <li><strong>Open Data Movement:</strong> Advocating for the free availability of government and research data.</li>
+        </ul>
+
+        <h2>Impact on Modern Life</h2>
+        <p>Tim Berners-Lee’s creation of the World Wide Web has had an immense impact on modern society, transforming everything from business practices to education, entertainment, and communication. The Web has become an essential tool for collaboration, commerce, and social interaction across the globe.</p>
+
+        <p>It has also played a major role in enabling rapid innovation in technology. From social media platforms to online marketplaces, the Web has helped drive countless advancements, fostering connectivity and breaking down geographical barriers.</p>
+    </div>
 </body>
 </html>

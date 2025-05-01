@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Web Quiz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         nav { background: #333; padding: 10px; }
         nav a { color: white; margin: 10px; text-decoration: none; }
         nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: auto; }
-        .question { margin-bottom: 20px; }
-        .result { margin-top: 20px; font-weight: bold; }
-        .btn { padding: 10px 20px; margin-top: 10px; }
+        .container { max-width: 100%; margin: auto; }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .container {
+                padding: 10px;
+            }
+            button {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
-
 <body>
     <nav>
         <a href="index.html">Home</a>
@@ -26,88 +47,20 @@
     </nav>
 
     <div class="container">
-        <h1>Self-Assessment Quiz</h1>
-        <form id="quizForm">
-            <!-- Question 1 -->
+        <h1>Web Development Quiz</h1>
+        <form action="#">
             <div class="question">
-                <p>1. Who invented the World Wide Web?</p>
-                <input type="radio" name="q1" value="a" /> Steve Jobs<br/>
-                <input type="radio" name="q1" value="b" /> Bill Gates<br/>
-                <input type="radio" name="q1" value="c" /> Tim Berners-Lee<br/>
+                <label>Who invented the World Wide Web?</label><br>
+                <input type="radio" name="q1" value="Tim Berners-Lee"> Tim Berners-Lee<br>
+                <input type="radio" name="q1" value="Mark Zuckerberg"> Mark Zuckerberg<br>
             </div>
-
-            <!-- Question 2 -->
             <div class="question">
-                <p>2. What does HTML stand for?</p>
-                <input type="radio" name="q2" value="a" /> HighText Machine Language<br/>
-                <input type="radio" name="q2" value="b" /> HyperText Markup Language<br/>
-                <input type="radio" name="q2" value="c" /> HyperTool Markup Link<br/>
+                <label>What does HTML stand for?</label><br>
+                <input type="radio" name="q2" value="HyperText Markup Language"> HyperText Markup Language<br>
+                <input type="radio" name="q2" value="HyperText Machine Language"> HyperText Machine Language<br>
             </div>
-
-            <!-- Question 3 -->
-            <div class="question">
-                <p>3. When was the World Wide Web made public?</p>
-                <input type="radio" name="q3" value="a" /> 1991<br/>
-                <input type="radio" name="q3" value="b" /> 1993<br/>
-                <input type="radio" name="q3" value="c" /> 1995<br/>
-            </div>
-
-            <!-- Fill in the blank -->
-            <div class="question">
-                <p>4. Fill in the blank: The protocol used for data transfer on the web is ______.</p>
-                <input type="text" name="q4" />
-            </div>
-
-            <!-- Multi-select question -->
-            <div class="question">
-                <p>5. Select all components invented by Tim Berners-Lee:</p>
-                <input type="checkbox" name="q5" value="html" /> HTML<br/>
-                <input type="checkbox" name="q5" value="http" /> HTTP<br/>
-                <input type="checkbox" name="q5" value="css" /> CSS<br/>
-                <input type="checkbox" name="q5" value="uri" /> URI (URL)<br/>
-            </div>
-
-            <button type="button" class="btn" onclick="gradeQuiz()">Submit</button>
-            <button type="reset" class="btn">Restart</button>
+            <button type="submit">Submit</button>
         </form>
-
-        <div id="result" class="result"></div>
     </div>
-
-    <script>
-        function gradeQuiz() {
-            let score = 0;
-            const total = 5;
-            const result = document.getElementById('result');
-            const answers = {
-                q1: 'c',
-                q2: 'b',
-                q3: 'b',
-                q4: 'http',
-                q5: ['html', 'http', 'uri']
-            };
-
-            const form = document.forms['quizForm'];
-
-            // Q1 - Q3
-            if (form.q1.value === answers.q1) score++;
-            if (form.q2.value === answers.q2) score++;
-            if (form.q3.value === answers.q3) score++;
-
-            // Q4
-            if (form.q4.value.toLowerCase() === answers.q4) score++;
-
-            // Q5
-            const selectedQ5 = [];
-            if (form.q5.html.checked) selectedQ5.push('html');
-            if (form.q5.http.checked) selectedQ5.push('http');
-            if (form.q5.uri.checked) selectedQ5.push('uri');
-
-            if (JSON.stringify(selectedQ5) === JSON.stringify(answers.q5)) score++;
-
-            // Show result
-            result.textContent = `Your score: ${score} / ${total}`;
-        }
-    </script>
 </body>
 </html>
